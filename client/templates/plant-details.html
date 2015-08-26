@@ -1,8 +1,8 @@
 <template name="plantDetails">
     <div class="row plant-details-page">
         <header>
-            <h2>{{> xEditable type="text" value=name success=onSuccessName placement="right" name='name'}}</h2>
-            <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName placement="right" name='scienceName' unsavedclass=null}}</span>
+            <h2>{{> xEditable type="text" value=name success=onSuccessName placement="right" name='name' mode='inline'}}</h2>
+            <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName placement="right" name='scienceName' unsavedclass=null  mode='inline'}}</span>
         </header>
         <div class="panel-group" id="plantDetails">
             <section class="panel panel-default">
@@ -10,7 +10,16 @@
                                               href="#lightConditions">Lighting conditions</a></div>
                 <div id="lightConditions" class="panel-collapse collapse in">
                     <div class="panel-body">
-                        <p>{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null}}</p>
+                        <p>{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline' width='100%'}}</p>
+                    </div>
+                </div>
+            </section>
+            <section class="panel panel-default">
+                <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
+                                              href="#lightConditions">Lighting conditions</a></div>
+                <div id="lightConditions" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline' width='100%'}}</p>
                     </div>
                 </div>
             </section>
@@ -20,10 +29,10 @@
                 <div id="waterConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
-                            Watering every {{> xEditable type="number" value=waterInterval success=onSuccessWaterInterval name="waterInterval" unsavedclass=null}} day{{#if gt waterInterval 1 }}s{{/if}}
+                            Water every {{> xEditable type="number" value=waterInterval success=onSuccessWaterInterval name="waterInterval" unsavedclass=null mode='inline'}} day{{#if gt waterInterval 1 }}s{{/if}}
                         </label>
 
-                        <p>{{> xEditable type="textarea" value=waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null}}</p>
+                        <p>{{> xEditable type="textarea" value=waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
@@ -33,9 +42,9 @@
                 <div id="fertilizerConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
-                            Fertilizing every {{> xEditable type="number" value=fertilizerInterval success=onSuccessFertilizerInterval name="fertilizerInterval" unsavedclass=null}} day{{#if gt fertilizerInterval 1 }}s{{/if}}
+                            Fertilize every {{> xEditable type="number" value=fertilizerInterval success=onSuccessFertilizerInterval name="fertilizerInterval" unsavedclass=null mode='inline'}} day{{#if gt fertilizerInterval 1 }}s{{/if}}
                         </label>
-                        <p>{{> xEditable type="textarea" value=fertilizerConditions success=onSuccessFertilizerConditions name='fertilizerConditions' unsavedclass=null}}</p>
+                        <p>{{> xEditable type="textarea" value=fertilizerConditions success=onSuccessFertilizerConditions name='fertilizerConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
@@ -45,10 +54,10 @@
                 <div id="sprayConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
-                            Spraying every {{> xEditable type="number" value=sprayInterval success=onSuccessSprayInterval name="sprayInterval" unsavedclass=null}} day{{#if gt sprayInterval 1 }}s{{/if}}
+                            Spray every {{> xEditable type="number" value=sprayInterval success=onSuccessSprayInterval name="sprayInterval" unsavedclass=null mode='inline'}} day{{#if gt sprayInterval 1 }}s{{/if}}
                         </label>
 
-                        <p>{{> xEditable type="textarea" value=sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null}}</p>
+                        <p>{{> xEditable type="textarea" value=sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
