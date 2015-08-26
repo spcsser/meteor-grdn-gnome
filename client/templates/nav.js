@@ -1,8 +1,14 @@
 Template.nav.helpers({
    navItems: function(){
        return [
-           {uri: '/home', label: 'Home'},
-           {uri: '/plants', label: 'Plant-Wiki'}
+           {
+               uri: Router.routes['home'].path({}),
+               label: 'Home'
+           },
+           {
+               uri: Router.routes['plants'].path({}),
+               label: 'Plant-Wiki'
+           }
        ]
    }
 });
