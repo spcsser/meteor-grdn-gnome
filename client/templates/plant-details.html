@@ -1,0 +1,7 @@
+<template name="plantDetails">
+    {{> nav title="Plant"}}
+    <div class="plant-details">
+        <h2>{{> xEditable type="text" value=name success=onSuccessName placement="right"}}</h2>
+        <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName placement="right" name='scienceName' }}</span>
+    </div>
+</template>

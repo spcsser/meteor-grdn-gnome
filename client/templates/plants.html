@@ -1,0 +1,42 @@
+<template name="plants">
+    {{#if currentUser}}
+        {{> newPlant}}
+    {{/if}}
+    <div class="row list-plants">
+    <ul>
+    {{#each plants}}
+        <li class="row">
+        {{> plantListItem}}
+        </li>
+    {{/each}}
+    </ul>
+    </div>
+</template>
+
+<template name="newPlant">
+    <div class="row newPlant">
+        <form class="newPlantForm">
+        {{#each plantListConfig }}
+            <label class="col-md-2">
+                <span>{{label}}</span>
+                <input type="text" name="{{key}}" value="" placeholder="{{label}}"/>
+            </label>
+        {{/each}}
+            <button type="submit" class="createBtn">New</button>
+        </form>
+    </div>
+</template>
+
+<template name="plantListItem">
+    <span class="col-md-2">
+        <img src="" title="{{name}}" class="list-plant-icon">
+    </span>
+    <span class="col-md-8">
+        <span class="list-plant-name">{{name}}</span><br/>
+        <span class="list-plant-scienceName">{{scienceName}}</span>
+    </span>
+    <span class="col-md-2">
+        <a href="{{ pathFor 'plant-details' id=this._id}}" class="fa fa-edit plant-edit"></a>
+        <a href class="fa fa-remove plant-delete"></a>
+    </span>
+</template>
