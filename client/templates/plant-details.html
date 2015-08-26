@@ -7,19 +7,19 @@
         <div class="panel-group" id="plantDetails">
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#lightConditions">Lighting conditions</a></div>
-                <div id="lightConditions" class="panel-collapse collapse in">
+                                              href="#plantDescription">Description</a></div>
+                <div id="plantDescription" class="panel-collapse collapse in">
                     <div class="panel-body">
-                        <p>{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline' width='100%'}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=plantDescription success=onSuccessPlantDescription name='plantDescription' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
                                               href="#lightConditions">Lighting conditions</a></div>
-                <div id="lightConditions" class="panel-collapse collapse in">
+                <div id="lightConditions" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p>{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline' width='100%'}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
@@ -32,7 +32,7 @@
                             Water every {{> xEditable type="number" value=waterInterval success=onSuccessWaterInterval name="waterInterval" unsavedclass=null mode='inline'}} day{{#if gt waterInterval 1 }}s{{/if}}
                         </label>
 
-                        <p>{{> xEditable type="textarea" value=waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null mode='inline'}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
@@ -44,7 +44,7 @@
                         <label>
                             Fertilize every {{> xEditable type="number" value=fertilizerInterval success=onSuccessFertilizerInterval name="fertilizerInterval" unsavedclass=null mode='inline'}} day{{#if gt fertilizerInterval 1 }}s{{/if}}
                         </label>
-                        <p>{{> xEditable type="textarea" value=fertilizerConditions success=onSuccessFertilizerConditions name='fertilizerConditions' unsavedclass=null mode='inline'}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=fertilizerConditions success=onSuccessFertilizerConditions name='fertilizerConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
@@ -57,7 +57,7 @@
                             Spray every {{> xEditable type="number" value=sprayInterval success=onSuccessSprayInterval name="sprayInterval" unsavedclass=null mode='inline'}} day{{#if gt sprayInterval 1 }}s{{/if}}
                         </label>
 
-                        <p>{{> xEditable type="textarea" value=sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null mode='inline'}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null mode='inline'}}</p>
                     </div>
                 </div>
             </section>
