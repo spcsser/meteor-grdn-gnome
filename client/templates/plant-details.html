@@ -12,7 +12,7 @@
         <div class="panel-group" id="plantDetails">
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#plantDescription">Description</a></div>
+                                              href="#plantDescription"><h3 class="panel-title">Description</h3></a></div>
                 <div id="plantDescription" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <p class="editable-wrap">{{> xEditable type="textarea" value=plantDescription success=onSuccessPlantDescription name='plantDescription' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
@@ -21,7 +21,7 @@
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#lightConditions">Lighting conditions</a></div>
+                                              href="#lightConditions"><h3 class="panel-title">Lighting conditions</h3></a></div>
                 <div id="lightConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <p class="editable-wrap">{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
@@ -30,7 +30,7 @@
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#waterConditions">Watering conditions (every {{waterInterval}} day{{#if gt waterInterval 1 }}s{{/if}})</a></div>
+                                              href="#waterConditions"><h3 class="panel-title">Watering conditions</h3> (every {{waterInterval}} day{{#if gt waterInterval 1 }}s{{/if}})</a></div>
                 <div id="waterConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
@@ -43,7 +43,7 @@
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#fertilizerConditions">Fertilizing conditions (every {{fertilizerInterval}} day{{#if gt fertilizerInterval 1 }}s{{/if}})</a></div>
+                                              href="#fertilizerConditions"><h3 class="panel-title">Fertilizing conditions</h3> (every {{fertilizerInterval}} day{{#if gt fertilizerInterval 1 }}s{{/if}})</a></div>
                 <div id="fertilizerConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
@@ -55,7 +55,7 @@
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#sprayConditions">Spraying conditions (every {{sprayInterval}} day{{#if gt sprayInterval 1 }}s{{/if}})</a></div>
+                                              href="#sprayConditions"><h3 class="panel-title">Spraying conditions</h3> (every {{sprayInterval}} day{{#if gt sprayInterval 1 }}s{{/if}})</a></div>
                 <div id="sprayConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>

@@ -18,7 +18,16 @@
         <form class="newGardenPlantForm">
             <label class="col-md-2">
                 <span>Name</span>
-                <input type="text" name="name" value="" placeholder="Name"/>
+                <input type="text" name="name" value="" placeholder="Name" required/>
+            </label>
+            <label class="col-md-2">
+                <span>Type</span>
+                <select name="plantId" required>
+                    <option value="">---</option>
+                    {{#each plants}}
+                        <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
+                </select>
             </label>
             <button type="submit" class="createBtn">New</button>
         </form>
@@ -31,7 +40,7 @@
     </span>
     <span class="col-md-8">
         <span class="list-plant-name">{{name}}</span><br/>
-        <span class="list-plant-scienceName">{{scienceName}}</span>
+        <span class="list-plant-scienceName">{{getPlantName plantId}}</span>
     </span>
     <span class="col-md-2">
         <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit garden-plant-edit"></a>

@@ -1,8 +1,55 @@
 <template name="gardenPlantDetails">
     <div class="row garden-plant-details-page">
         <header class="row">
-            <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
-            <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span>
+            <div class="col-sm-8">
+                <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
+                <span>{{> myEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span>
+            </div>
         </header>
+        <div class="panel-group" id="gardenPlantDetails">
+            <section class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{> gardenPlantActions this}}</h3>
+                </div>
+
+                <div id="gardenPlantEvents" class="">
+                    <div class="panel-body">
+                        {{> gardenPlantEvents}}
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+</template>
+
+<template name="gardenPlantActions">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="gardenPlantActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Take care
+            <span class="caret"></span>
+        </button>
+        <ul aria-labelledby="gardenPlantActions" class="dropdown-menu">
+            <li><a href class="waterGardenPlant">Water plant</a></li>
+            <li><a href class="sprayGardenPlant">Spray plant</a></li>
+            <li><a href class="fertilizeGardenPlant">Fertilize plant</a></li>
+        </ul>
+    </div>
+</template>
+
+<template name="gardenPlantEvents">
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#each gardenPlantEvents}}
+            <tr>
+                <td>{{event}}</td>
+                <td>{{createdAt}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
 </template>
