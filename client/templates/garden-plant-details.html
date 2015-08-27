@@ -12,10 +12,8 @@
                     <h3 class="panel-title">{{> gardenPlantActions this}}</h3>
                 </div>
 
-                <div id="gardenPlantEvents" class="">
-                    <div class="panel-body">
-                        {{> gardenPlantEvents}}
-                    </div>
+                <div class="panel-body">
+                    {{> gardenPlantEvents}}
                 </div>
             </section>
         </div>
@@ -37,10 +35,12 @@
 </template>
 
 <template name="gardenPlantEvents">
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th></th>
+                <th>Event</th>
+                <th>Time</th>
+                <th>User</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +48,7 @@
             <tr>
                 <td>{{event}}</td>
                 <td>{{createdAt}}</td>
+                <td>{{getUserName creatorUserId}}&lt;{{getUserMail creatorUserId}}&gt;</td>
             </tr>
         {{/each}}
         </tbody>

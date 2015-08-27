@@ -4,28 +4,27 @@
       <sourceFilesUrls>
         <item url="file://$USER_HOME$/.meteor/packages/iron_core/1.0.8/os/packages/iron_core.js" />
         <item url="file://$USER_HOME$/.meteor/packages/tracker/1.0.7/os/packages/tracker.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.77/os/packages/ian_accounts-ui-bootstrap-3.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ui/1.0.6/os/packages/ui.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/coffeescript/1.0.6/os/packages/coffeescript.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_dynamic-template/1.0.8/os/packages/iron_dynamic-template.js" />
         <item url="file://$USER_HOME$/.meteor/packages/underscore/1.0.3/os/packages/underscore.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_layout/1.0.8/os/packages/iron_layout.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/anti_i18n/0.4.3/os/packages/anti:i18n.js" />
         <item url="file://$USER_HOME$/.meteor/packages/url/1.0.4/os/packages/url.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_location/1.0.9/os/packages/iron_location.js" />
         <item url="file://$USER_HOME$/.meteor/packages/webapp/1.2.0/os/packages/webapp.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_middleware-stack/1.0.9/os/packages/iron_middleware-stack.js" />
         <item url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.3/os/packages/webapp-hashing.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.0/os/packages/accounts-base.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/workman_meteor-editable/0.1.8/os/packages/workman:meteor-editable.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_router/1.0.9/os/packages/iron_router.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_url/1.0.9/os/packages/iron_url.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.1.1/os/packages/accounts-password.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-ui/1.1.5/os/packages/accounts-ui.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.3_2/os/packages/jquery.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.7/os/packages/accounts-ui-unstyled.js" />
         <item url="file://$USER_HOME$/.meteor/packages/json/1.0.3/os/packages/json.js" />
         <item url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.1/os/packages/autoupdate.js" />
         <item url="file://$USER_HOME$/.meteor/packages/launch-screen/1.0.2/os/packages/launch-screen.js" />
         <item url="file://$USER_HOME$/.meteor/packages/base64/1.0.3/os/packages/base64.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/less/1.0.14/os/packages/less.js" />
         <item url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.3/os/packages/binary-heap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/livedata/1.0.13/os/packages/livedata.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze/2.1.2/os/packages/blaze.js" />
@@ -58,41 +57,45 @@
         <item url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.4/os/packages/html-tools.js" />
         <item url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.4/os/packages/htmljs.js" />
         <item url="file://$USER_HOME$/.meteor/packages/session/1.1.0/os/packages/session.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/zimme_iron-router-auth/3.1.0/os/packages/zimme_iron-router-auth.js" />
         <item url="file://$USER_HOME$/.meteor/packages/sha/1.0.3/os/packages/sha.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.1.0/os/packages/http.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/workman_x-editable-reactive-template/1.0.1/os/packages/workman:x-editable-reactive-template.js" />
         <item url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.6/os/packages/spacebars.js" />
         <item url="file://$USER_HOME$/.meteor/packages/id-map/1.0.3/os/packages/id-map.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/stylus/1.0.7/os/packages/stylus.js" />
         <item url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.0.6/os/packages/spacebars-compiler.js" />
         <item url="file://$USER_HOME$/.meteor/packages/insecure/1.0.3/os/packages/insecure.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/reywood_bootstrap3-sass/3.3.5_1/os/packages/reywood_bootstrap3-sass.js" />
         <item url="file://$USER_HOME$/.meteor/packages/srp/1.0.3/os/packages/srp.js" />
         <item url="file://$USER_HOME$/.meteor/packages/iron_controller/1.0.8/os/packages/iron_controller.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/natestrauser_x-editable-bootstrap/1.5.2_2/os/packages/natestrauser:x-editable-bootstrap.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$USER_HOME$/.meteor/packages/iron_core/1.0.8/os/packages/iron_core.js" />
       <root url="file://$USER_HOME$/.meteor/packages/tracker/1.0.7/os/packages/tracker.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.77/os/packages/ian_accounts-ui-bootstrap-3.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ui/1.0.6/os/packages/ui.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/coffeescript/1.0.6/os/packages/coffeescript.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_dynamic-template/1.0.8/os/packages/iron_dynamic-template.js" />
       <root url="file://$USER_HOME$/.meteor/packages/underscore/1.0.3/os/packages/underscore.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_layout/1.0.8/os/packages/iron_layout.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/anti_i18n/0.4.3/os/packages/anti:i18n.js" />
       <root url="file://$USER_HOME$/.meteor/packages/url/1.0.4/os/packages/url.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_location/1.0.9/os/packages/iron_location.js" />
       <root url="file://$USER_HOME$/.meteor/packages/webapp/1.2.0/os/packages/webapp.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_middleware-stack/1.0.9/os/packages/iron_middleware-stack.js" />
       <root url="file://$USER_HOME$/.meteor/packages/webapp-hashing/1.0.3/os/packages/webapp-hashing.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.2.0/os/packages/accounts-base.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/workman_meteor-editable/0.1.8/os/packages/workman:meteor-editable.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_router/1.0.9/os/packages/iron_router.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_url/1.0.9/os/packages/iron_url.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.1.1/os/packages/accounts-password.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-ui/1.1.5/os/packages/accounts-ui.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.3_2/os/packages/jquery.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.7/os/packages/accounts-ui-unstyled.js" />
       <root url="file://$USER_HOME$/.meteor/packages/json/1.0.3/os/packages/json.js" />
       <root url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.1/os/packages/autoupdate.js" />
       <root url="file://$USER_HOME$/.meteor/packages/launch-screen/1.0.2/os/packages/launch-screen.js" />
       <root url="file://$USER_HOME$/.meteor/packages/base64/1.0.3/os/packages/base64.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/less/1.0.14/os/packages/less.js" />
       <root url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.3/os/packages/binary-heap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/livedata/1.0.13/os/packages/livedata.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze/2.1.2/os/packages/blaze.js" />
@@ -125,14 +128,19 @@
       <root url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.4/os/packages/html-tools.js" />
       <root url="file://$USER_HOME$/.meteor/packages/htmljs/1.0.4/os/packages/htmljs.js" />
       <root url="file://$USER_HOME$/.meteor/packages/session/1.1.0/os/packages/session.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/zimme_iron-router-auth/3.1.0/os/packages/zimme_iron-router-auth.js" />
       <root url="file://$USER_HOME$/.meteor/packages/sha/1.0.3/os/packages/sha.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.1.0/os/packages/http.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/workman_x-editable-reactive-template/1.0.1/os/packages/workman:x-editable-reactive-template.js" />
       <root url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.6/os/packages/spacebars.js" />
       <root url="file://$USER_HOME$/.meteor/packages/id-map/1.0.3/os/packages/id-map.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/stylus/1.0.7/os/packages/stylus.js" />
       <root url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.0.6/os/packages/spacebars-compiler.js" />
       <root url="file://$USER_HOME$/.meteor/packages/insecure/1.0.3/os/packages/insecure.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/reywood_bootstrap3-sass/3.3.5_1/os/packages/reywood_bootstrap3-sass.js" />
       <root url="file://$USER_HOME$/.meteor/packages/srp/1.0.3/os/packages/srp.js" />
       <root url="file://$USER_HOME$/.meteor/packages/iron_controller/1.0.8/os/packages/iron_controller.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/natestrauser_x-editable-bootstrap/1.5.2_2/os/packages/natestrauser:x-editable-bootstrap.js" />
     </CLASSES>
     <SOURCES />
   </library>
