@@ -27,15 +27,7 @@ Template.newPlant.events({
             }
         });
 
-        var updateDate = new Date(),
-            userId = Meteor.userId();
-
-        data.creatorUserId = userId;
-        data.createdAt = updateDate;
-        data.updaterUserId = userId;
-        data.updatedAt = updateDate;
-
-        Plants.insert(data);
+        Meteor.call('createPlant', data);
 
         PLANT_CONFIG.forEach(function(entry){
             $(event.target).find("[name='" + entry.key + "']").val('');

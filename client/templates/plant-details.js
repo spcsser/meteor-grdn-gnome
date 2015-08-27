@@ -2,7 +2,9 @@ onSuccess= function(id, fieldName) {
     return function(res, val){
         var updates = {};
         updates[fieldName] = val;
-        Plants.update(id, {$set: updates});
+
+        Meteor.call('updatePlant', id, updates);
+
         return {newValue: val};
     };
 };
@@ -35,4 +37,10 @@ Template.plantDetails.helpers({
     onSuccessSprayInterval: function(){
         return onSuccess(this._id, 'sprayInterval');
     }
+});
+
+Template.plantDetails.events({
+   'click .add-garden-plant': function(){
+       Meteor.call('addGardenPlant', this._id);
+   }
 });

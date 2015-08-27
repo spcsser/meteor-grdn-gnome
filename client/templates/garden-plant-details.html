@@ -1,0 +1,8 @@
+<template name="gardenPlantDetails">
+    <div class="row garden-plant-details-page">
+        <header class="row">
+            <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
+            <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span>
+        </header>
+    </div>
+</template>

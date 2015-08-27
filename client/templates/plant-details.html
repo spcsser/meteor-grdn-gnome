@@ -1,8 +1,13 @@
 <template name="plantDetails">
     <div class="row plant-details-page">
-        <header>
-            <h2>{{> xEditable type="text" value=name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
-            <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName placement="right" name='scienceName' unsavedclass=null  mode='inline' disabled=isNotUserLoggedIn}}</span>
+        <header class="row">
+            <div class="col-sm-8">
+                <h2>{{> xEditable type="text" value=name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
+                <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName placement="right" name='scienceName' unsavedclass=null  mode='inline' disabled=isNotUserLoggedIn}}</span>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-default add-garden-plant">Add plant to garden</button>
+            </div>
         </header>
         <div class="panel-group" id="plantDetails">
             <section class="panel panel-default">
