@@ -8,6 +8,10 @@ Template.nav.helpers({
            {
                uri: Router.routes['plants'].path({}),
                label: 'Plant-Wiki'
+           },
+           {
+               uri: Router.routes['gardenPlants'].path({}),
+               label: 'Garden Plants'
            }
        ]
    }

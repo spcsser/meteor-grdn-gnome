@@ -28,3 +28,9 @@ Template.newGardenPlant.events({
         });
     }
 });
+
+Template.gardenPlantListItem.events({
+    'click .garden-plant-delete': function(){
+        Meteor.call('deleteGardenPlant', this._id);
+    }
+});

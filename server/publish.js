@@ -21,7 +21,3 @@ Meteor.publish('plantSelectList', function(){
 Meteor.publish('gardenPlantEvents', function(gardenPlantId){
     return GardenPlantEvents.find({gardenPlantId: gardenPlantId});
 });
-
-Meteor.publish('userData', function(){
-   return Meteor.users.find({}, {name: 1, email: 1})
-});
