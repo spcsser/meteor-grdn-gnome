@@ -3,10 +3,28 @@
         <header class="row">
             <div class="col-sm-8">
                 <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
-                <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span>
+                <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span><span><a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a></span>
             </div>
         </header>
         <div class="panel-group" id="gardenPlantDetails">
+            <section class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Upcoming events</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#if gt plant.waterInterval 0}}
+                            <li>Water in {{diffToday gardenPlant.waterDate 'd'}} days</li>
+                        {{/if}}
+                        {{#if gt plant.sprayInterval 0}}
+                            <li>Spray in {{diffToday gardenPlant.sprayDate 'd'}} days</li>
+                        {{/if}}
+                        {{#if gt plant.fertilizeInterval 0}}
+                            <li>Fertilize in {{diffToday gardenPlant.fertilizeDate 'd'}} days</li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </section>
             <section class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">{{> gardenPlantActions this}}</h3>

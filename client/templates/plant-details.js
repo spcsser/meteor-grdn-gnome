@@ -22,8 +22,8 @@ Template.plantDetails.helpers({
     onSuccessWaterConditions: function(){
         return onSuccess(this._id, 'waterConditions');
     },
-    onSuccessFertilizerConditions: function(){
-        return onSuccess(this._id, 'fertilizerConditions');
+    onSuccessFertilizeConditions: function(){
+        return onSuccess(this._id, 'fertilizeConditions');
     },
     onSuccessSprayConditions: function(){
         return onSuccess(this._id, 'sprayConditions');
@@ -31,8 +31,8 @@ Template.plantDetails.helpers({
     onSuccessWaterInterval: function(){
         return onSuccess(this._id, 'waterInterval');
     },
-    onSuccessFertilizerInterval: function(){
-        return onSuccess(this._id, 'fertilizerInterval');
+    onSuccessFertilizeInterval: function(){
+        return onSuccess(this._id, 'fertilizeInterval');
     },
     onSuccessSprayInterval: function(){
         return onSuccess(this._id, 'sprayInterval');

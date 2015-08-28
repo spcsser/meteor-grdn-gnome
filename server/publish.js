@@ -21,3 +21,8 @@ Meteor.publish('plantSelectList', function(){
 Meteor.publish('gardenPlantEvents', function(gardenPlantId){
     return GardenPlantEvents.find({gardenPlantId: gardenPlantId});
 });
+
+Meteor.publish('gardenPlantPlant', function(gardenPlantId){
+    var gardenPlant = GardenPlants.findOne({_id: gardenPlantId});
+    return Plants.find({_id: gardenPlant.plantId});
+});

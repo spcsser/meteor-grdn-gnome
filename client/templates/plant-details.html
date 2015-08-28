@@ -43,13 +43,13 @@
             </section>
             <section class="panel panel-default">
                 <div class="panel-heading"><a data-toggle="collapse" data-parent="#plantDetails"
-                                              href="#fertilizerConditions"><h3 class="panel-title">Fertilizing conditions</h3> (every {{fertilizerInterval}} day{{#if gt fertilizerInterval 1 }}s{{/if}})</a></div>
-                <div id="fertilizerConditions" class="panel-collapse collapse">
+                                              href="#fertilizeConditions"><h3 class="panel-title">Fertilizing conditions</h3> (every {{fertilizeInterval}} day{{#if gt fertilizeInterval 1 }}s{{/if}})</a></div>
+                <div id="fertilizeConditions" class="panel-collapse collapse">
                     <div class="panel-body">
                         <label>
-                            Fertilize every {{> xEditable type="number" value=fertilizerInterval success=onSuccessFertilizerInterval name="fertilizerInterval" unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}} day{{#if gt fertilizerInterval 1 }}s{{/if}}
+                            Fertilize every {{> xEditable type="number" value=fertilizeInterval success=onSuccessFertilizeInterval name="fertilizeInterval" unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}} day{{#if gt fertilizeInterval 1 }}s{{/if}}
                         </label>
-                        <p class="editable-wrap">{{> xEditable type="textarea" value=fertilizerConditions success=onSuccessFertilizerConditions name='fertilizerConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
+                        <p class="editable-wrap">{{> xEditable type="textarea" value=fertilizeConditions success=onSuccessFertilizeConditions name='fertilizeConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
                     </div>
                 </div>
             </section>
