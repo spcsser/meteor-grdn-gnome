@@ -34,3 +34,7 @@ Template.registerHelper('diffToday', function(targetDate, datePart){
     targetDate = typeof targetDate === 'undefined' ? new Date() : targetDate
     return Date.dateDiff(datePart, today, targetDate);
 });
+
+Template.registerHelper('_', function(){
+    return _;
+});

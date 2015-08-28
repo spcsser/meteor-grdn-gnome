@@ -5,6 +5,12 @@
                 <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
                 <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span><span><a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a></span>
             </div>
+            <div class="col-sm-4">
+                <button class="btn btn-primary {{#if amIWatchingGardenPlant}}unwatchGardenPlant{{else}}watchGardenPlant{{/if}}" type="button">
+                    <i class="fa fa-eye" style="color:black;"></i>
+                    {{#if amIWatchingGardenPlant}}Unwatch{{else}}Watch{{/if}} <span class="badge">{{_.size gardenPlant.watcher}}</span>
+                </button>
+            </div>
         </header>
         <div class="panel-group" id="gardenPlantDetails">
             <section class="panel panel-default">
