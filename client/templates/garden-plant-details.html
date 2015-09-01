@@ -2,8 +2,9 @@
     <div class="row garden-plant-details-page">
         <header class="row">
             <div class="col-sm-8">
-                <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' mode='inline' disabled=isNotUserLoggedIn}}</h2>
-                <span>{{> xEditable type="select" value=gardenPlant.plantId name='plantId' mode='inline' disabled=isNotUserLoggedIn source=plantsList}}</span><span><a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a></span>
+                <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
+                <span>{{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}</span><span><a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a></span>
+                <span>{{> xEditable type="text" value=gardenPlant.location success=onSuccessLocation name='location' disabled=isNotUserLoggedIn}}</span>
             </div>
             <div class="col-sm-4">
                 <button class="btn {{#if amIWatchingGardenPlant}}unwatchGardenPlant btn-primary{{else}}watchGardenPlant{{/if}}" type="button">

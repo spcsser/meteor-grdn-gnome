@@ -1,9 +1,6 @@
-onSuccess= function(id, fieldName) {
+onSuccessPlant= function(id, fieldName) {
     return function(res, val){
-        var updates = {};
-        updates[fieldName] = val;
-
-        Meteor.call('updatePlant', id, updates);
+        Meteor.call('updatePlant', id, fieldName, val);
 
         return {newValue: val};
     };
@@ -11,31 +8,31 @@ onSuccess= function(id, fieldName) {
 
 Template.plantDetails.helpers({
     onSuccessName: function(){
-        return onSuccess(this._id, 'name');
+        return onSuccessPlant(this._id, 'name');
     },
     onSuccessScienceName: function(){
-        return onSuccess(this._id, 'scienceName');
+        return onSuccessPlant(this._id, 'scienceName');
     },
     onSuccessLightConditions: function(){
-        return onSuccess(this._id, 'lightConditions');
+        return onSuccessPlant(this._id, 'lightConditions');
     },
     onSuccessWaterConditions: function(){
-        return onSuccess(this._id, 'waterConditions');
+        return onSuccessPlant(this._id, 'waterConditions');
     },
     onSuccessFertilizeConditions: function(){
-        return onSuccess(this._id, 'fertilizeConditions');
+        return onSuccessPlant(this._id, 'fertilizeConditions');
     },
     onSuccessSprayConditions: function(){
-        return onSuccess(this._id, 'sprayConditions');
+        return onSuccessPlant(this._id, 'sprayConditions');
     },
     onSuccessWaterInterval: function(){
-        return onSuccess(this._id, 'waterInterval');
+        return onSuccessPlant(this._id, 'waterInterval');
     },
     onSuccessFertilizeInterval: function(){
-        return onSuccess(this._id, 'fertilizeInterval');
+        return onSuccessPlant(this._id, 'fertilizeInterval');
     },
     onSuccessSprayInterval: function(){
-        return onSuccess(this._id, 'sprayInterval');
+        return onSuccessPlant(this._id, 'sprayInterval');
     }
 });
 

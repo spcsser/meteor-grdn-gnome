@@ -32,9 +32,17 @@ Meteor.methods({
         GardenPlants.remove({_id: plantId});
     },
     addGardenPlantWatcher: function(gardenPlantId, userId){
-        GardenPlants.update({_id: gardenPlantId}, {$push: {'watcher': userId}});
+        GardenPlants.update({_id: gardenPlantId}, {$push: {watcher: userId}});
     },
     removeGardenPlantWatcher: function(gardenPlantId, userId){
-        GardenPlants.update({_id: gardenPlantId}, {$pull: {'watcher': userId}});
+        GardenPlants.update({_id: gardenPlantId}, {$pull: {watcher: userId}});
+    },
+    updateGardenPlant: function(gardenPlantId, fieldName, value){
+        var updateDate = new Date(),
+            data = {};
+        data[fieldName] = value;
+        data.updaterUserId = Meteor.userId();
+        data.updatedAt = updateDate;
+        GardenPlants.update(gardenPlantId, {$set: data});
     }
 });

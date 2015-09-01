@@ -1,9 +1,26 @@
+onSuccessGardenPlant = function(id, fieldName) {
+    return function(res, val){
+        Meteor.call('updateGardenPlant', id, fieldName, val);
+
+        return {newValue: val};
+    };
+};
+
 Template.gardenPlantDetails.helpers({
     plantsList: function(){
         return this.plants.map(function(u){return {value: u._id, text: u.name};});
     },
     amIWatchingGardenPlant: function(){
         return _.contains(this.gardenPlant.watcher, Meteor.userId());
+    },
+    onSuccessName: function() {
+        return onSuccessGardenPlant(this.gardenPlant._id, 'name');
+    },
+    onSuccessPlantId: function() {
+        return onSuccessGardenPlant(this.gardenPlant._id, 'plantId');
+    },
+    onSuccessLocation: function() {
+        return onSuccessGardenPlant(this.gardenPlant._id, 'location');
     }
 });
 
