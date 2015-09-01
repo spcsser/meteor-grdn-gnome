@@ -29,5 +29,5 @@ Helper to watch over your plants and garden and remind you to take care of them 
   * build
   * test
   * adapt
-* plant
+* garden-plant
   * add location
