@@ -31,3 +31,4 @@ Helper to watch over your plants and garden and remind you to take care of them 
   * adapt
 * garden-plant
   * add location
+  * edit the next action date (spray, water, fertilize)
