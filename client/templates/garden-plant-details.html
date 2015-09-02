@@ -21,13 +21,13 @@
                 <div class="panel-body">
                     <ul>
                         {{#if gt plant.waterInterval 0}}
-                            <li>Water in {{diffToday gardenPlant.waterDate 'd'}} days</li>
+                            <li>Water in {{diffToday gardenPlant.actions.water.nextDate 'd'}} days</li>
                         {{/if}}
                         {{#if gt plant.sprayInterval 0}}
-                            <li>Spray in {{diffToday gardenPlant.sprayDate 'd'}} days</li>
+                            <li>Spray in {{diffToday gardenPlant.actions.spray.nextDate 'd'}} days</li>
                         {{/if}}
                         {{#if gt plant.fertilizeInterval 0}}
-                            <li>Fertilize in {{diffToday gardenPlant.fertilizeDate 'd'}} days</li>
+                            <li>Fertilize in {{diffToday gardenPlant.actions.fertilize.nextDate 'd'}} days</li>
                         {{/if}}
                     </ul>
                 </div>

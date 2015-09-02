@@ -1,15 +1,18 @@
 Meteor.methods({
     waterGardenPlant: function(gardenPlantId){
-        Meteor.call('insertGardenPlantEvent', 'water', gardenPlantId);
-        Meteor.call('updateActionDate', gardenPlantId, 'waterDate', 'waterInterval');
+        var actionName = 'water';
+        Meteor.call('insertGardenPlantEvent', actionName, gardenPlantId);
+        Meteor.call('updateActionDate', gardenPlantId, actionName);
     },
     fertilizeGardenPlant: function(gardenPlantId){
-        Meteor.call('insertGardenPlantEvent', 'fertilize', gardenPlantId);
-        Meteor.call('updateActionDate', gardenPlantId, 'fertilizeDate', 'fertilizeInterval');
+        var actionName = 'fertilize';
+        Meteor.call('insertGardenPlantEvent', actionName, gardenPlantId);
+        Meteor.call('updateActionDate', gardenPlantId, actionName);
     },
     sprayGardenPlant: function(gardenPlantId){
-        Meteor.call('insertGardenPlantEvent', 'spray', gardenPlantId);
-        Meteor.call('updateActionDate', gardenPlantId, 'sprayDate', 'sprayInterval');
+        var actionName = 'spray';
+        Meteor.call('insertGardenPlantEvent', actionName, gardenPlantId);
+        Meteor.call('updateActionDate', gardenPlantId, actionName);
     },
     insertGardenPlantEvent: function(eventType, gardenPlantId){
         var updateDate = new Date(),
@@ -22,13 +25,17 @@ Meteor.methods({
 
         return GardenPlantEvents.insert(data);
     },
-    updateActionDate: function(gardenPlantId, updateField, intervalField){
+    updateActionDate: function(gardenPlantId, actionName){
+        var intervalField = actionName + 'Interval';
         var gardenPlant = GardenPlants.findOne({_id: gardenPlantId});
         var plant = Plants.findOne({_id: gardenPlant.plantId});
         var data = {};
-        data[updateField] = new Date().addDays(plant[intervalField]);
+        data['actions.' + actionName] = {
+            action: actionName,
+            nextDate: new Date().addDays(plant[intervalField])
+        };
         GardenPlants.update(
-            {_id: gardenPlantId},
+            gardenPlantId,
             {$set: data}
         );
     }

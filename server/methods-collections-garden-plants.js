@@ -16,11 +16,38 @@ Meteor.methods({
         data.updaterUserId = userId;
         data.updatedAt = updateDate;
         data.watcher = [];
+        data.actions = {
+            water: {
+                action: 'water',
+                nextDate: null,
+                required: false
+            },
+            spray: {
+                action: 'spray',
+                nextDate: null,
+                required: false
+            },
+            fertilize: {
+                action: 'fertilize',
+                nextDate: null,
+                required: false
+            }
+        };
 
         if(typeof plant === 'object'){
-            data.waterDate = new Date().addDays(plant.waterInterval);
-            data.sprayDate = new Date().addDays(plant.sprayInterval);
-            data.fertilizeDate = new Date().addDays(plant.fertilizeInterval);
+            if(plant.waterInterval > 0){
+                data.actions.water.nextDate = new Date().addDays(plant.waterInterval);
+                data.actions.water.required = true;
+            }
+
+            if(plant.sprayInterval > 0){
+                data.actions.spray.nextDate = new Date().addDays(plant.sprayInterval);
+                data.actions.spray.required = true;
+            }
+            if(plant.fertilizeInterval > 0){
+                data.actions.fertilize.nextDate = new Date().addDays(plant.fertilizeInterval);
+                data.actions.fertilize.required = true;
+            }
         }
 
         return GardenPlants.insert(data);

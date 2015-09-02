@@ -1,3 +1,26 @@
 <template name="home">
-    Empty and no news
+    {{> upcomingEvents}}
+</template>
+
+<template name="upcomingEvents">
+    <div>
+        {{#each upcomingEvents}}
+            <div>
+                {{name}}:
+                {{> upcomingGardenPlantEvent actionName='water' plant=this eventDayRange=5}}
+                {{> upcomingGardenPlantEvent actionName='spray' plant=this eventDayRange=5}}
+                {{> upcomingGardenPlantEvent actionName='fertilize' plant=this eventDayRange=5}}
+            </div>
+        {{/each}}
+    </div>
+</template>
+
+<template name="upcomingGardenPlantEvent">
+    {{#if isActionRequired}}
+        {{#if isActionUpcoming}}
+            {{actionName}}
+        {{else}}
+            no {{actionName}}ing
+        {{/if}}
+    {{/if}}
 </template>
