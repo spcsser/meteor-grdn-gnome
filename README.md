@@ -2,7 +2,7 @@
 Helper to watch over your plants and garden and remind you to take care of them regularly.
 
 ## Todos
-* Show upcoming events on home
+* -Show upcoming events on home- (shows next 5 days)
 * Let user configure how they want to receive notification
   * options are 
     * email

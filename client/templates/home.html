@@ -11,6 +11,8 @@
                 {{> upcomingGardenPlantEvent actionName='spray' plant=this eventDayRange=5}}
                 {{> upcomingGardenPlantEvent actionName='fertilize' plant=this eventDayRange=5}}
             </div>
+            {{else}}
+            (: All your plants are taken care of :)
         {{/each}}
     </div>
 </template>
@@ -19,8 +21,6 @@
     {{#if isActionRequired}}
         {{#if isActionUpcoming}}
             {{actionName}}
-        {{else}}
-            no {{actionName}}ing
         {{/if}}
     {{/if}}
 </template>
