@@ -2,7 +2,9 @@
 Helper to watch over your plants and garden and to remind you to take care of them regularly.
 
 ## Todos
-* ~~Show upcoming events on home~~ (shows next 5 days)
+* home
+  * ~~Show upcoming events on home~~ (shows next 5 days)
+  * Show unattended plants
 * Let user configure how they want to receive notification
   * options are 
     * email
@@ -32,3 +34,4 @@ Helper to watch over your plants and garden and to remind you to take care of th
 * garden-plant
   * add location
   * edit the next action date (spray, water, fertilize)
+
