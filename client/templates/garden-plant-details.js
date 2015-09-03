@@ -11,7 +11,7 @@ Template.gardenPlantDetails.helpers({
         return this.plants.map(function(u){return {value: u._id, text: u.name};});
     },
     gardensList: function(){
-        return this.gardens.map(function(u){return {id: u._id, text: u.name};});
+        return this.gardens.map(function(u){return {id: u._id, name: u.name};});
     },
     amIWatchingGardenPlant: function(){
         return _.contains(this.gardenPlant.watcher, Meteor.userId());
@@ -23,7 +23,7 @@ Template.gardenPlantDetails.helpers({
         return onSuccessGardenPlant(this.gardenPlant._id, 'plantId');
     },
     onSuccessGardenId: function() {
-        return onSuccessGardenPlant(this.gardenPlant._id, 'location');
+        return onSuccessGardenPlant(this.gardenPlant._id, 'garden');
     }
 });
 

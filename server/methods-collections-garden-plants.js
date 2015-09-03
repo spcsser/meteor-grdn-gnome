@@ -16,6 +16,7 @@ Meteor.methods({
         data.updaterUserId = userId;
         data.updatedAt = updateDate;
         data.watcher = [];
+        data.garden = null;
         data.actions = {
             water: {
                 action: 'water',
