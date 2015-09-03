@@ -1,0 +1,22 @@
+<template name="gardens">
+    <div class="row list-plants">
+        <ul>
+        {{#each gardens}}
+            <li class="row">
+            {{> gardenListItem}}
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="gardenListItem">
+    <span class="col-md-2">
+        <span class="list-garden-name">{{name}}</span><br/>
+        <span class="list-garden-plantCount">{{GardenPlant.plantCount gardenId}}</span>
+    </span>
+    <span class="col-md-2">
+        <a href="{{ pathFor 'gardenDetails' id=this._id}}" class="fa fa-edit garden-edit"></a>
+        <a href class="fa fa-remove garden-delete"></a>
+    </span>
+</template>

@@ -11,9 +11,10 @@ fourseven:scss
 iron:router
 reywood:bootstrap3-sass
 natestrauser:x-editable-bootstrap
-workman:x-editable-reactive-template
 ian:accounts-ui-bootstrap-3
 fortawesome:fontawesome
 zimme:iron-router-auth
 underscore
 raix:push
+mrt:bootstrap3-typeahead
+workman:x-editable-reactive-template
