@@ -1,5 +1,5 @@
 # meteor-grdn-gnome
-Helper to watch over your plants and garden and remind you to take care of them regularly.
+Helper to watch over your plants and garden and to remind you to take care of them regularly.
 
 ## Todos
 * ~~Show upcoming events on home~~ (shows next 5 days)
