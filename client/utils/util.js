@@ -38,3 +38,7 @@ Template.registerHelper('diffToday', function(targetDate, datePart){
 Template.registerHelper('_', function(){
     return _;
 });
+
+Template.registerHelper('GardenPlant', function(){
+    return GardenPlant;
+});

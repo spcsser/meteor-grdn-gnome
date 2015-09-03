@@ -9,38 +9,6 @@ Template.upcomingEvents.helpers({
 
         actionName = 'actions.' + actionName + '.nextDate';
         query[actionName] = {$elemMatch: {$lte: today}};
-        var result = GardenPlants.find(query);
-        return result;
-    }
-});
-
-Template.upcomingGardenPlantEvent.helpers({
-    isActionRequired: function(){
-        var result = false;
-        if(this.plant) {
-            if (this.plant.actions) {
-                if (this.plant.actions[this.actionName]) {
-                    if (this.plant.actions[this.actionName].required) {
-                        result = this.plant.actions[this.actionName].required;
-                    }
-                }
-            }
-        }
-        return result;
-    },
-    isActionUpcoming: function(){
-        var result = false;
-        if(this.plant) {
-            if (this.plant.actions) {
-                if (this.plant.actions[this.actionName]) {
-                    if (this.plant.actions[this.actionName].nextDate) {
-                        var days = Date.dateDiff('d', new Date(), this.plant.actions[this.actionName].nextDate);
-                        result = this.eventDayRange > days;
-                        console.log(result, this.eventDayRange, days);
-                    }
-                }
-            }
-        }
-        return result;
+        return GardenPlants.find(query);
     }
 });

@@ -7,20 +7,12 @@
         {{#each upcomingEvents}}
             <div>
                 {{name}}:
-                {{> upcomingGardenPlantEvent actionName='water' plant=this eventDayRange=5}}
-                {{> upcomingGardenPlantEvent actionName='spray' plant=this eventDayRange=5}}
-                {{> upcomingGardenPlantEvent actionName='fertilize' plant=this eventDayRange=5}}
+                {{> gardenPlantRequiredAction actionName='water' plant=this eventDayRange=5}}
+                {{> gardenPlantRequiredAction actionName='spray' plant=this eventDayRange=5}}
+                {{> gardenPlantRequiredAction actionName='fertilize' plant=this eventDayRange=5}}
             </div>
             {{else}}
             (: All your plants are taken care of :)
         {{/each}}
     </div>
-</template>
-
-<template name="upcomingGardenPlantEvent">
-    {{#if isActionRequired}}
-        {{#if isActionUpcoming}}
-            {{actionName}}
-        {{/if}}
-    {{/if}}
 </template>
