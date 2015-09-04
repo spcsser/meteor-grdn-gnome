@@ -30,7 +30,7 @@ Template.gardenPlantDetails.helpers({
     onSuccessPlantId: function() {
         return onSuccessGardenPlant(this.gardenPlant._id, 'plantId');
     },
-    onSuccessGardenId: function() {
+    onSuccessGarden: function() {
         return onSuccessGardenPlant(this.gardenPlant._id, 'garden');
     }
 });

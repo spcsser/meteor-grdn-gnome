@@ -4,7 +4,7 @@
             <div class="col-sm-8">
                 <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
                 <div>{{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}<span><a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a></span></div>
-                <div>{{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGardenId name='garden' disabled=isNotUserLoggedIn pk="1" typeahead=typeaheadjs}}</div>
+                <div>{{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGarden name='garden' disabled=isNotUserLoggedIn typeahead=typeaheadjs}}</div>
             </div>
             <div class="col-sm-4">
                 <button class="btn {{#if amIWatchingGardenPlant}}unwatchGardenPlant btn-primary{{else}}watchGardenPlant{{/if}}" type="button">
