@@ -1,4 +1,8 @@
 <template name="appBody">
+    <script>
+        $.fn.editable.defaults.mode='inline';
+        $.fn.editable.defaults.unsavedclass=null;
+    </script>
     {{> nav title="Plantopia"}}
     <div class="container grdn-gnome" role="main">
         {{> yield}}

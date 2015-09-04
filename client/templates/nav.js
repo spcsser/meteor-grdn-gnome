@@ -1,18 +1,31 @@
 Template.nav.helpers({
    navItems: function(){
-       return [
-           {
-               uri: Router.routes['home'].path({}),
-               label: 'Home'
-           },
-           {
-               uri: Router.routes['plants'].path({}),
-               label: 'Plant-Wiki'
-           },
-           {
-               uri: Router.routes['gardenPlants'].path({}),
-               label: 'Garden Plants'
-           }
-       ]
+       return Navigation.getItems();
    }
 });
+
+Navigation = {
+    items: []
+};
+Navigation.addItem = function(pathName, label, options){
+    if(Router.routes[pathName]){
+        var uri = Router.routes[pathName].path({});
+        Navigation.items.push(
+            {
+                uri: uri,
+                label: label
+            }
+        );
+    }
+};
+Navigation.init = function(){
+    Navigation.addItem('home', 'Home');
+    Navigation.addItem('plants', 'Plant-Wiki');
+    Navigation.addItem('gardenPlants', 'Garden Plants');
+};
+Navigation.getItems = function(){
+    if(Navigation.items.length === 0) {
+        Navigation.init();
+    }
+    return Navigation.items;
+};

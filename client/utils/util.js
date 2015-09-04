@@ -31,10 +31,14 @@ Template.registerHelper('printUnit', function(amount, unit, unitPlural){
 Template.registerHelper('diffToday', function(targetDate, datePart){
     var today = new Date();
     datePart = typeof datePart === 'undefined' ? 'd' : datePart;
-    targetDate = typeof targetDate === 'undefined' ? new Date() : targetDate
+    targetDate = typeof targetDate === 'undefined' ? new Date() : targetDate;
     return Date.dateDiff(datePart, today, targetDate);
 });
 
 Template.registerHelper('_', function(){
     return _;
+});
+
+Template.registerHelper('GardenPlant', function(){
+    return GardenPlant;
 });

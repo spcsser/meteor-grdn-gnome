@@ -26,11 +26,12 @@ Meteor.methods({
 
         Plants.insert(data);
     },
-    updatePlant: function(id, updates){
-        var updateDate = new Date();
-
-        updates.updaterUserId = Meteor.userId();
-        updates.updatedAt = updateDate;
-        Plants.update(id, {$set: updates});
+    updatePlant: function(id, fieldName, value){
+        var updateDate = new Date(),
+            data = {};
+        data[fieldName] = value;
+        data.updaterUserId = Meteor.userId();
+        data.updatedAt = updateDate;
+        Plants.update(id, {$set: data});
     }
 });

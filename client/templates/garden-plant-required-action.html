@@ -1,0 +1,7 @@
+<template name="gardenPlantRequiredAction">
+    {{#if GardenPlant.isActionRequired this actionName}}
+        {{#if isActionUpcoming this actionName eventDayRange}}
+            {{actionName}}
+        {{/if}}
+    {{/if}}
+</template>
