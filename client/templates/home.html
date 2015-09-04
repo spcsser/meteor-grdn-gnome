@@ -24,7 +24,9 @@
         <h2>Unattended plants</h2>
         {{#each unattendedPlants}}
             <div>
-            {{name}}
+                <a href="{{pathFor 'gardenPlantDetails' id=this._id}}" >
+                {{name}}
+                </a>
             </div>
         {{/each}}
     </div>
