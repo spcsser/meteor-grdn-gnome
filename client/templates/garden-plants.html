@@ -33,22 +33,3 @@
         </form>
     </div>
 </template>
-
-<template name="gardenPlantListItem">
-    <span class="col-md-1">
-        <img src="{{plantIcon}}" title="{{name}}" class="list-garden-plant-icon">
-    </span>
-    <span class="col-md-1">
-        {{> gardenPlantRequiredAction plant=this actionName='water' eventDayRange=1}}
-        {{> gardenPlantRequiredAction plant=this actionName='spray' eventDayRange=1}}
-        {{> gardenPlantRequiredAction plant=this actionName='fertilize' eventDayRange=1}}
-    </span>
-    <span class="col-md-2">
-        <span class="list-plant-name">{{name}}</span><br/>
-        <span class="list-plant-scienceName">{{getPlantName plantId}}</span>
-    </span>
-    <span class="col-md-1">
-        <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit garden-plant-edit"></a>
-        <a href class="fa fa-remove garden-plant-delete"></a>
-    </span>
-</template>

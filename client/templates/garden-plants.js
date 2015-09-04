@@ -3,13 +3,6 @@ GARDEN_PLANT_CONFIG = [
     {key: 'plantId'}
 ];
 
-Template.gardenPlantListItem.helpers({
-    'getPlantName': function(plantId){
-        var plant = Plants.findOne({_id: plantId});
-        return typeof plant === 'object' ? plant.name : '';
-    }
-});
-
 Template.newGardenPlant.events({
     'submit .newGardenPlantForm': function(event) {
         event.preventDefault();
@@ -26,11 +19,5 @@ Template.newGardenPlant.events({
             var $elem=$(event.target).find("[name='" + entry.key + "']");
             $elem.val('');
         });
-    }
-});
-
-Template.gardenPlantListItem.events({
-    'click .garden-plant-delete': function(){
-        Meteor.call('deleteGardenPlant', this._id);
     }
 });
