@@ -7,14 +7,13 @@
     <div>
         <h2>Upcoming events</h2>
         {{#each upcomingEvents}}
-            <div>
-                {{name}}:
-                {{> gardenPlantRequiredAction actionName='water' plant=this eventDayRange=5}}
-                {{> gardenPlantRequiredAction actionName='spray' plant=this eventDayRange=5}}
-                {{> gardenPlantRequiredAction actionName='fertilize' plant=this eventDayRange=5}}
+            <div class="row">
+                {{> gardenPlantListItem}}
             </div>
             {{else}}
-            (: All your plants are taken care of :)
+            <div class="row">
+                (: All your plants are taken care of :)
+            </div>
         {{/each}}
     </div>
 </template>
@@ -23,10 +22,8 @@
     <div>
         <h2>Unattended plants</h2>
         {{#each unattendedPlants}}
-            <div>
-                <a href="{{pathFor 'gardenPlantDetails' id=this._id}}" >
-                {{name}}
-                </a>
+            <div class="row">
+                {{> gardenPlantListItem}}
             </div>
         {{/each}}
     </div>
