@@ -1,9 +1,11 @@
 <template name="home">
     {{> upcomingEvents}}
+    {{> unattendedPlants}}
 </template>
 
 <template name="upcomingEvents">
     <div>
+        <h2>Upcoming events</h2>
         {{#each upcomingEvents}}
             <div>
                 {{name}}:
@@ -13,6 +15,17 @@
             </div>
             {{else}}
             (: All your plants are taken care of :)
+        {{/each}}
+    </div>
+</template>
+
+<template name="unattendedPlants">
+    <div>
+        <h2>Unattended plants</h2>
+        {{#each unattendedPlants}}
+            <div>
+            {{name}}
+            </div>
         {{/each}}
     </div>
 </template>
