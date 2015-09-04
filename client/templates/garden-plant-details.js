@@ -10,8 +10,16 @@ Template.gardenPlantDetails.helpers({
     plantsList: function(){
         return this.plants.map(function(u){return {value: u._id, text: u.name};});
     },
-    gardensList: function(){
-        return this.gardens.map(function(u){return {id: u._id, name: u.name};});
+    typeaheadjs: function(){
+        var me = this;
+        return {
+            name: 'garden',
+            source: me.gardens(),
+            template: function(item){
+                console.log(item);
+                return item;
+            }
+        };
     },
     amIWatchingGardenPlant: function(){
         return _.contains(this.gardenPlant.watcher, Meteor.userId());
