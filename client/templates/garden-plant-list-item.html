@@ -12,18 +12,18 @@
         <span class="list-plant-scienceName">{{getPlantName plantId}}</span>
     </span>
     <span class="col-md-1">
-        <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit garden-plant-edit"></a>
-        <a href class="fa fa-remove garden-plant-delete"></a>
+        <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit fa-2x garden-plant-edit"></a>
+        <a href class="fa fa-remove fa-2x garden-plant-delete"></a>
     </span>
 </template>
 
 <template name="gardenPlantRequiredAction">
     {{#if GardenPlant.isActionRequired plant actionName}}
-        {{#if isActionUpcoming plant actionName eventDayRange}}
+        {{#if GardenPlant.isActionUpcoming plant actionName eventDayRange}}
             <a href>
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-{{actionCssMapping actionName}} fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-{{GardenPlant.actionCssMapping actionName}} fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
         {{/if}}

@@ -16,7 +16,6 @@ Template.gardenPlantDetails.helpers({
             name: 'garden',
             source: me.gardens(),
             template: function(item){
-                console.log(item);
                 return item;
             }
         };
