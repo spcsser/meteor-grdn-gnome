@@ -1,42 +1,46 @@
 <template name="plants">
-    {{#if currentUser}}
-        {{> newPlant}}
-    {{/if}}
-    <div class="row list-plants">
-    <ul>
-    {{#each plants}}
-        <li class="row">
-        {{> plantListItem}}
-        </li>
-    {{/each}}
-    </ul>
-    </div>
+    <section class="panel panel-default list-plants">
+        <header class="panel-heading">
+        {{#if currentUser}}
+            {{> newPlant}}
+            {{else}}
+            <h1 class="panel-title">Plants</h1>
+        {{/if}}
+        </header>
+        <table class="table">
+            <tbody>
+            {{#each plants}}
+                <tr>
+                {{> plantListItem}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </section>
 </template>
 
 <template name="newPlant">
-    <div class="row newPlant">
-        <form class="newPlantForm">
+    <form class="newPlantForm form-inline">
         {{#each plantListConfig }}
-            <label class="col-md-2">
-                <span>{{label}}</span>
-                <input type="text" name="{{key}}" value="" placeholder="{{label}}" required/>
-            </label>
+            <div class="form-group">
+                <label for="newPlantForm_{{key}}">{{label}}</label>
+                <input type="text" name="{{key}}" value="" placeholder="{{label}}" id="newPlantForm_{{key}}" required class="form-control"/>
+            </div>
         {{/each}}
-            <button type="submit" class="createBtn">New</button>
-        </form>
-    </div>
+        <button type="submit" class="createBtn btn btn-default">New</button>
+    </form>
 </template>
 
 <template name="plantListItem">
-    <span class="col-md-2">
+    <td class="">
         <img src="{{plantIcon}}" title="{{name}}" class="list-plant-icon">
-    </span>
-    <span class="col-md-2">
+    </td>
+    <td class="">
         <span class="list-plant-name">{{name}}</span><br/>
         <span class="list-plant-scienceName">{{scienceName}}</span>
-    </span>
-    <span class="col-md-2">
-        <a href="{{ pathFor 'plantDetails' id=this._id}}" class="fa fa-edit plant-edit"></a>
-        <a href class="fa fa-remove plant-delete"></a>
-    </span>
+    </td>
+    <td class="">
+        <a href="{{ pathFor 'plantDetails' id=this._id}}" class="fa fa-edit fa-2x plant-edit"></a>
+        <a href class="fa fa-remove fa-2x plant-delete"></a>
+    </td>
 </template>

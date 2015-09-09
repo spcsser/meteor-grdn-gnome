@@ -1,35 +1,40 @@
 <template name="gardenPlants">
-    {{#if currentUser}}
-        {{> newGardenPlant}}
-    {{/if}}
-    <div class="row list-garden-plants">
-        <ul>
+    <section class="panel panel-default">
+        <header class="panel-heading">
+            {{#if currentUser}}
+                {{> newGardenPlant}}
+            {{else}}
+                <h1 class="panel-title">Garden Plants</h1>
+            {{/if}}
+        </header>
+        <table class="table">
+            <tbody>
             {{#each gardenPlants}}
-                <li class="row">
+                <tr>
                     {{> gardenPlantListItem}}
-                </li>
+                </tr>
             {{/each}}
-        </ul>
-    </div>
+            </tbody>
+        </table>
+    </section>
 </template>
 
 <template name="newGardenPlant">
-    <div class="row newGardenPlant">
-        <form class="newGardenPlantForm">
-            <label class="col-md-2">
-                <span>Name</span>
-                <input type="text" name="name" value="" placeholder="Name" required/>
-            </label>
-            <label class="col-md-2">
-                <span>Type</span>
-                <select name="plantId" required>
-                    <option value="">---</option>
-                    {{#each plants}}
-                        <option value="{{_id}}">{{name}}</option>
-                    {{/each}}
-                </select>
-            </label>
-            <button type="submit" class="createBtn">New</button>
-        </form>
-    </div>
+    <form class="newGardenPlant newGardenPlantForm form-inline">
+        <div class="form-group">
+            <label for="newGardenPlant_name">Name</label>
+            <input type="text" name="name" value="" placeholder="Name" id="newGardenPlant_name" required
+                   class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="newGardenPlant_id">Type</label>
+            <select name="plantId" id="newGardenPlant_id" required class="form-control">
+                <option value="">---</option>
+                {{#each plants}}
+                    <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="createBtn btn btn-default">New</button>
+    </form>
 </template>

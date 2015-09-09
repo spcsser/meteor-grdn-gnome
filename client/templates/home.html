@@ -4,27 +4,39 @@
 </template>
 
 <template name="upcomingEvents">
-    <div>
-        <h2>Upcoming events</h2>
-        {{#each upcomingEvents}}
-            <div class="row">
+    <section class="panel panel-default">
+        <header class="panel-heading">
+            <h2 class="panel-title">Upcoming events</h2>
+        </header>
+        <table class="table">
+            <tbody>
+            {{#each upcomingEvents}}
+                <tr>
                 {{> gardenPlantListItem}}
-            </div>
-            {{else}}
-            <div class="row">
-                (: All your plants are taken care of :)
-            </div>
-        {{/each}}
-    </div>
+                </tr>
+                {{else}}
+                <tr>
+                    <td>(: All your plants are taken care of :)</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </section>
 </template>
 
 <template name="unattendedPlants">
-    <div>
-        <h2>Unattended plants</h2>
-        {{#each unattendedPlants}}
-            <div class="row">
+    <section class="panel panel-default">
+        <header class="panel-heading">
+        <h2 class="panel-title">Unattended plants</h2>
+        </header>
+        <table class="table">
+            <tbody>
+            {{#each unattendedPlants}}
+                <tr>
                 {{> gardenPlantListItem}}
-            </div>
-        {{/each}}
-    </div>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </section>
 </template>

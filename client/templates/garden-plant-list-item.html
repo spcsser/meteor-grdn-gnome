@@ -1,20 +1,20 @@
 <template name="gardenPlantListItem">
-    <span class="col-md-1">
-        <img src="{{plantIcon}}" title="{{name}}" class="list-garden-plant-icon">
-    </span>
-    <span class="col-md-1">
+    <td class="">
+        <img src="{{plantIcon}}" title="{{name}}" class="list-garden-plant-icon"/>
+    </td>
+    <td class="">
         {{> gardenPlantRequiredAction plant=this actionName='water' eventDayRange=1}}
         {{> gardenPlantRequiredAction plant=this actionName='spray' eventDayRange=1}}
         {{> gardenPlantRequiredAction plant=this actionName='fertilize' eventDayRange=1}}
-    </span>
-    <span class="col-md-2">
+    </td>
+    <td class="">
         <span class="list-plant-name">{{name}}</span><br/>
         <span class="list-plant-scienceName">{{getPlantName plantId}}</span>
-    </span>
-    <span class="col-md-1">
+    </td>
+    <td class="">
         <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit fa-2x garden-plant-edit"></a>
         <a href class="fa fa-remove fa-2x garden-plant-delete"></a>
-    </span>
+    </td>
 </template>
 
 <template name="gardenPlantRequiredAction">
