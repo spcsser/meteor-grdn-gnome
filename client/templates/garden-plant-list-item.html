@@ -18,9 +18,14 @@
 </template>
 
 <template name="gardenPlantRequiredAction">
-    {{#if GardenPlant.isActionRequired this actionName}}
-        {{#if isActionUpcoming this actionName eventDayRange}}
-            {{actionName}}
+    {{#if GardenPlant.isActionRequired plant actionName}}
+        {{#if isActionUpcoming plant actionName eventDayRange}}
+            <a href>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{actionCssMapping actionName}} fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
         {{/if}}
     {{/if}}
 </template>

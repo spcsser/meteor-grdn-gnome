@@ -52,9 +52,24 @@
             <span class="caret"></span>
         </button>
         <ul aria-labelledby="gardenPlantActions" class="dropdown-menu">
-            <li><a href class="waterGardenPlant">Water plant</a></li>
-            <li><a href class="sprayGardenPlant">Spray plant</a></li>
-            <li><a href class="fertilizeGardenPlant">Fertilize plant</a></li>
+            <li><a href class="waterGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{actionCssMapping 'water'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Water plant</a></li>
+            <li><a href class="sprayGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{actionCssMapping 'spray'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Spray plant</a></li>
+            <li><a href class="fertilizeGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{actionCssMapping 'fertilize'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Fertilize plant</a></li>
         </ul>
     </div>
 </template>
