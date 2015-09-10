@@ -13,22 +13,24 @@
     </td>
     <td class="">
         <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="garden-plant-edit"><i class="fa fa-edit fa-2x"></i></a>
-        <a href class="garden-plant-delete"><i class="fa fa-remove fa-2x"></i></a>
-        {{#if GardenPlant.amIWatching this}}
-            <a href class="garden-plant-delete"><i class="fa fa-remove fa-2x"></i> </a>
+        <a href class="deleteGardenPlant"><i class="fa fa-remove fa-2x"></i></a>
+        {{#if GardenPlant.amINotWatching this}}
+            <a href class="watchGardenPlant"><i class="fa fa-eye fa-2x"></i> </a>
         {{/if}}
     </td>
 </template>
 
 <template name="gardenPlantRequiredAction">
-    {{#if GardenPlant.isActionRequired plant actionName}}
-        {{#if GardenPlant.isActionUpcoming plant actionName eventDayRange}}
+    <span class="
+        {{#if GardenPlant.isRequiredActionUpcoming plant actionName eventDayRange}}
+            {{else}}
+            invisible
+        {{/if}}">
             <a href>
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-{{GardenPlant.actionCssMapping actionName}} fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
-        {{/if}}
-    {{/if}}
+        </span>
 </template>

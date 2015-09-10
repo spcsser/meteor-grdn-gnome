@@ -1,6 +1,13 @@
 Template.gardenPlantListItem.events({
-    'click .garden-plant-delete': function(){
+    'click .deleteGardenPlant': function(){
         Meteor.call('deleteGardenPlant', this._id);
+    },
+    'click .watchGardenPlant': function(){
+        var userId = Meteor.userId();
+        var gardenPlantId = this._id;
+        if(userId && gardenPlantId){
+            Meteor.call('addGardenPlantWatcher', gardenPlantId, userId);
+        }
     }
 });
 

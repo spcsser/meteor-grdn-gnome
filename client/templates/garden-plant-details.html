@@ -1,32 +1,110 @@
 <template name="gardenPlantDetails">
     <div class="garden-plant-details-page">
-        <header class="">
-            <span class="glyphicon glyphicon-grain fa-5x fa-pull-left fa-border"></span>
-            <div class="">
-                <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
-                <dl class="dl-horizontal">
-                    <dt>
-                        <i class="fa fa-leaf"></i>
-                    </dt>
-                    <dd>
-                        {{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}
-                        <a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i class='fa fa-info'></i></a>
-                    </dd>
-                    <dt>
-                        <i class="fa fa-map-marker"></i>
-                    </dt>
-                    <dd>
-                        {{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGarden name='garden' disabled=isNotUserLoggedIn typeahead=typeaheadjs}}
-                    </dd>
-                </dl>
+        {{> gardenPlantDetailsHeader}}
+        {{> gardenPlantDetailsContent}}
+    </div>
+</template>
+
+<template name="gardenPlantActions">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle btn-block" type="button" id="gardenPlantActions"
+                data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-heart"></i>
+            Take care
+            <span class="caret"></span>
+        </button>
+        <ul aria-labelledby="gardenPlantActions" class="dropdown-menu">
+            <li><a href class="waterGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{GardenPlant.actionCssMapping 'water'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Water plant</a></li>
+            <li><a href class="sprayGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{GardenPlant.actionCssMapping 'spray'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Spray plant</a></li>
+            <li><a href class="fertilizeGardenPlant">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-{{GardenPlant.actionCssMapping 'fertilize'}} fa-stack-1x fa-inverse"></i>
+                </span>
+                Fertilize plant</a></li>
+        </ul>
+    </div>
+</template>
+
+<template name="gardenPlantEvents">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each gardenPlantEvents}}
+            <tr>
+                <td>{{event}}</td>
+                <td>{{createdAt}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
+<template name="gardenPlantDetailsHeader">
+    <header class="col-sm-3">
+        <div class="row">
+            <div class="col-sm-5">
+                <span class="fa fa-5x fa-border">
+                    <span class="glyphicon glyphicon-grain"></span>
+                </span>
             </div>
-            <div class="amIWatching">
-                <button class="btn {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant btn-primary{{else}}watchGardenPlant{{/if}}" type="button">
-                    <i class="fa fa-eye" style="color:black;"></i>
-                    {{#if GardenPlant.amIWatching this.gardenPlant}}Unwatch{{else}}Watch{{/if}} <span class="badge">{{_.size gardenPlant.watcher}}</span>
-                </button>
+            <div class="col-sm-7">
+                <span class="">
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='water' eventDayRange=1}}
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='spray' eventDayRange=1}}
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='fertilize' eventDayRange=1}}
+                </span>
+                <span class="">
+                    <button class="btn btn-block {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"
+                            type="button">
+                        <i class="fa fa-eye" style="color:black;"></i>
+                        {{#if GardenPlant.amIWatching this.gardenPlant}}Unwatch{{else}}Watch{{/if}}
+                        <span class="badge">{{_.size gardenPlant.watcher}}</span>
+                    </button>
+                </span>
+                <span class="">
+                    {{> gardenPlantActions this.gardenPlant}}
+                </span>
             </div>
-        </header>
+        </div>
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-leaf fa-fw"></i>
+                    {{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}
+                    <a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i
+                            class='fa fa-info'></i></a>
+                </li>
+                <li class="list-group-item">
+                    <i class="fa fa-map-marker fa-fw"></i>
+                    {{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGarden name='garden' disabled=isNotUserLoggedIn typeahead=typeaheadjs}}
+                </li>
+            </ul>
+        </div>
+    </header>
+</template>
+
+<template name="gardenPlantDetailsContent">
+    <div class="col-sm-9">
         <div class="panel-group" id="gardenPlantDetails">
             <section class="panel panel-default">
                 <div class="panel-heading">
@@ -57,52 +135,4 @@
             </section>
         </div>
     </div>
-</template>
-
-<template name="gardenPlantActions">
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="gardenPlantActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Take care
-            <span class="caret"></span>
-        </button>
-        <ul aria-labelledby="gardenPlantActions" class="dropdown-menu">
-            <li><a href class="waterGardenPlant">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-{{GardenPlant.actionCssMapping 'water'}} fa-stack-1x fa-inverse"></i>
-                </span>
-                Water plant</a></li>
-            <li><a href class="sprayGardenPlant">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-{{GardenPlant.actionCssMapping 'spray'}} fa-stack-1x fa-inverse"></i>
-                </span>
-                Spray plant</a></li>
-            <li><a href class="fertilizeGardenPlant">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-{{GardenPlant.actionCssMapping 'fertilize'}} fa-stack-1x fa-inverse"></i>
-                </span>
-                Fertilize plant</a></li>
-        </ul>
-    </div>
-</template>
-
-<template name="gardenPlantEvents">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Event</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody>
-        {{#each gardenPlantEvents}}
-            <tr>
-                <td>{{event}}</td>
-                <td>{{createdAt}}</td>
-            </tr>
-        {{/each}}
-        </tbody>
-    </table>
 </template>

@@ -12,7 +12,7 @@
             <tbody>
             {{#each upcomingEvents}}
                 <tr>
-                {{> gardenPlantListItem}}
+                    {{> gardenPlantListItem}}
                 </tr>
                 {{else}}
                 <tr>
@@ -33,7 +33,11 @@
             <tbody>
             {{#each unattendedPlants}}
                 <tr>
-                {{> gardenPlantListItem}}
+                    {{> gardenPlantListItem}}
+                </tr>
+                {{else}}
+                <tr>
+                    <td>(: All your plants have a guardian :)</td>
                 </tr>
             {{/each}}
             </tbody>
