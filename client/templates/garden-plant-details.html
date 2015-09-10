@@ -1,13 +1,17 @@
 <template name="gardenPlantDetails">
     <div class="garden-plant-details-page">
-        {{> gardenPlantDetailsHeader}}
-        {{> gardenPlantDetailsContent}}
+        <div class="col-sm-3">
+            {{> gardenPlantDetailsHeader}}
+        </div>
+        <div class="col-sm-9">
+            {{> gardenPlantDetailsContent}}
+        </div>
     </div>
 </template>
 
 <template name="gardenPlantActions">
     <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle btn-block" type="button" id="gardenPlantActions"
+        <button class="btn btn-default dropdown-toggle {{btnCssClass}}" type="button" id="gardenPlantActions"
                 data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="true">
             <i class="fa fa-heart"></i>
@@ -57,7 +61,7 @@
 </template>
 
 <template name="gardenPlantDetailsHeader">
-    <header class="col-sm-3">
+    <header class="">
         <div class="row">
             <div class="col-sm-5">
                 <span class="fa fa-5x fa-border">
@@ -79,7 +83,7 @@
                     </button>
                 </span>
                 <span class="">
-                    {{> gardenPlantActions this.gardenPlant}}
+                    {{> gardenPlantActions this.gardenPlant btnCssClass="btn-block"}}
                 </span>
             </div>
         </div>
@@ -104,7 +108,6 @@
 </template>
 
 <template name="gardenPlantDetailsContent">
-    <div class="col-sm-9">
         <div class="panel-group" id="gardenPlantDetails">
             <section class="panel panel-default">
                 <div class="panel-heading">
@@ -134,5 +137,4 @@
                 </div>
             </section>
         </div>
-    </div>
 </template>
