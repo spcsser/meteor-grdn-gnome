@@ -20,9 +20,6 @@ Template.gardenPlantDetails.helpers({
             }
         };
     },
-    amIWatchingGardenPlant: function(){
-        return _.contains(this.gardenPlant.watcher, Meteor.userId());
-    },
     onSuccessName: function() {
         return onSuccessGardenPlant(this.gardenPlant._id, 'name');
     },

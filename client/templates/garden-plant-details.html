@@ -20,9 +20,9 @@
                 </dl>
             </div>
             <div class="">
-                <button class="btn {{#if amIWatchingGardenPlant}}unwatchGardenPlant btn-primary{{else}}watchGardenPlant{{/if}}" type="button">
+                <button class="btn {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant btn-primary{{else}}watchGardenPlant{{/if}}" type="button">
                     <i class="fa fa-eye" style="color:black;"></i>
-                    {{#if amIWatchingGardenPlant}}Unwatch{{else}}Watch{{/if}} <span class="badge">{{_.size gardenPlant.watcher}}</span>
+                    {{#if GardenPlant.amIWatching this.gardenPlant}}Unwatch{{else}}Watch{{/if}} <span class="badge">{{_.size gardenPlant.watcher}}</span>
                 </button>
             </div>
         </header>

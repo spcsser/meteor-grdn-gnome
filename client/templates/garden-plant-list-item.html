@@ -12,8 +12,11 @@
         <span class="list-plant-scienceName">{{getPlantName plantId}}</span>
     </td>
     <td class="">
-        <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="fa fa-edit fa-2x garden-plant-edit"></a>
-        <a href class="fa fa-remove fa-2x garden-plant-delete"></a>
+        <a href="{{ pathFor 'gardenPlantDetails' id=this._id}}" class="garden-plant-edit"><i class="fa fa-edit fa-2x"></i></a>
+        <a href class="garden-plant-delete"><i class="fa fa-remove fa-2x"></i></a>
+        {{#if GardenPlant.amIWatching this}}
+            <a href class="garden-plant-delete"><i class="fa fa-remove fa-2x"></i> </a>
+        {{/if}}
     </td>
 </template>
 
