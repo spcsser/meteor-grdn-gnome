@@ -70,9 +70,9 @@
             </div>
             <div class="col-sm-7">
                 <span class="">
-                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='water' eventDayRange=1}}
-                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='spray' eventDayRange=1}}
-                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='fertilize' eventDayRange=1}}
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='water'}}
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='spray'}}
+                    {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='fertilize'}}
                 </span>
                 <span class="">
                     <button class="btn btn-default btn-block {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"

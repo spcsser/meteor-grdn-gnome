@@ -12,7 +12,7 @@
             <tbody>
             {{#each upcomingEvents}}
                 <tr>
-                    {{> gardenPlantListItem}}
+                    {{> gardenPlantListItem eventDayRange=GardenPlant.eventDayRange.home}}
                 </tr>
                 {{else}}
                 <tr>
@@ -33,7 +33,7 @@
             <tbody>
             {{#each unattendedPlants}}
                 <tr>
-                    {{> gardenPlantListItem}}
+                    {{> gardenPlantListItem eventDayRange=GardenPlant.eventDayRange.home}}
                 </tr>
                 {{else}}
                 <tr>
