@@ -75,7 +75,7 @@
                     {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='fertilize' eventDayRange=1}}
                 </span>
                 <span class="">
-                    <button class="btn btn-block {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"
+                    <button class="btn btn-default btn-block {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"
                             type="button">
                         <i class="fa fa-eye" style="color:black;"></i>
                         {{#if GardenPlant.amIWatching this.gardenPlant}}Unwatch{{else}}Watch{{/if}}
