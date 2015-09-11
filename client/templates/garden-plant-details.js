@@ -7,6 +7,9 @@ onSuccessGardenPlant = function(id, fieldName) {
 };
 
 Template.gardenPlantDetails.helpers({
+});
+
+Template.gardenPlantDetailsHeader.helpers({
     plantsList: function(){
         return this.plants.map(function(u){return {value: u._id, text: u.name};});
     },
@@ -43,7 +46,7 @@ Template.gardenPlantActions.events({
     }
 });
 
-Template.gardenPlantDetails.events({
+Template.gardenPlantDetailsHeader.events({
     'click .watchGardenPlant': function(){
         var userId = Meteor.userId();
         var gardenPlantId = this.gardenPlant._id;

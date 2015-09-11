@@ -37,7 +37,7 @@ Template.plantDetails.helpers({
 });
 
 Template.plantDetails.events({
-   'click .add-garden-plant': function(){
+   'click .addGardenPlant': function(){
        Meteor.call('addGardenPlant', this._id);
    }
 });
