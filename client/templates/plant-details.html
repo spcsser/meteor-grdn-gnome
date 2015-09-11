@@ -15,11 +15,11 @@
             <button class="btn btn-default addGardenPlant"><i class="fa fa-plus"></i> Add to garden</button>
         </div>
         <div class="row">
-            <ul class="">
-                <li>
+            <ul class="list-group">
+                <li class="list-group-item">
                     <h2>{{> xEditable type="text" value=name success=onSuccessName name='name' disabled=isNotUserLoggedIn}}</h2>
                 </li>
-                <li>
+                <li class="list-group-item">
                     <span>{{> xEditable type="text" value=scienceName success=onSuccessScienceName name='scienceName' disabled=isNotUserLoggedIn}}</span>
                 </li>
             </ul>
