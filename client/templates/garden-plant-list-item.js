@@ -8,6 +8,15 @@ Template.gardenPlantListItem.events({
         if(userId && gardenPlantId){
             Meteor.call('addGardenPlantWatcher', gardenPlantId, userId);
         }
+    },
+    'click .waterGardenPlant': function(){
+        Meteor.call('waterGardenPlant', this.plant._id);
+    },
+    'click .sprayGardenPlant': function(){
+        Meteor.call('sprayGardenPlant', this.plant._id);
+    },
+    'click .fertilizeGardenPlant': function(){
+        Meteor.call('fertilizeGardenPlant', this.plant._id);
     }
 });
 
