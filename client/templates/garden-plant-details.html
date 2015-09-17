@@ -1,16 +1,21 @@
 <template name="gardenPlantDetails">
     <div class="garden-plant-details-page">
-        <div class="col-sm-3">
-            {{> gardenPlantDetailsHeader}}
-        </div>
-        <div class="col-sm-9">
-            {{> gardenPlantDetailsContent}}
+        <div class="row">
+            <div class="col-sm-12">
+                {{> gardenPlantDetailsActionHeader}}
+            </div>
+            <div class="col-sm-3">
+                {{> gardenPlantDetailsHeader}}
+            </div>
+            <div class="col-sm-9">
+                {{> gardenPlantDetailsContent}}
+            </div>
         </div>
     </div>
 </template>
 
 <template name="gardenPlantActions">
-    <div class="dropdown">
+    <span class="dropdown">
         <button class="btn btn-default dropdown-toggle {{btnCssClass}}" type="button" id="gardenPlantActions"
                 data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="true">
@@ -38,7 +43,7 @@
                 </span>
                 Fertilize plant</a></li>
         </ul>
-    </div>
+    </span>
 </template>
 
 <template name="gardenPlantEvents">
@@ -63,78 +68,84 @@
 <template name="gardenPlantDetailsHeader">
     <header class="">
         <div class="row">
-            <div class="col-sm-6">
-                <span class="fa fa-5x fa-border">
-                    <span class="glyphicon glyphicon-grain"></span>
-                </span>
+            <div class="col-sm-12 col-xs-12">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-leaf fa-fw"></i>
+                        {{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}
+                        <a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i
+                                class='fa fa-info'></i></a>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa fa-map-marker fa-fw"></i>
+                        {{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGarden name='garden' disabled=isNotUserLoggedIn typeahead=typeaheadjs}}
+                    </li>
+                </ul>
             </div>
-            <div class="col-sm-6">
+        </div>
+    </header>
+</template>
+
+<template name="gardenPlantDetailsContent">
+    <div class="panel-group" id="gardenPlantDetails">
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Upcoming events</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    {{#if gt plant.waterInterval 0}}
+                        <li>Water in {{diffToday gardenPlant.actions.water.nextDate 'd'}} days</li>
+                    {{/if}}
+                    {{#if gt plant.sprayInterval 0}}
+                        <li>Spray in {{diffToday gardenPlant.actions.spray.nextDate 'd'}} days</li>
+                    {{/if}}
+                    {{#if gt plant.fertilizeInterval 0}}
+                        <li>Fertilize in {{diffToday gardenPlant.actions.fertilize.nextDate 'd'}} days</li>
+                    {{/if}}
+                </ul>
+            </div>
+        </section>
+        <section class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{> gardenPlantActions}}</h3>
+            </div>
+            <div class="panel-body">
+                {{> gardenPlantEvents}}
+            </div>
+        </section>
+    </div>
+</template>
+
+<template name="gardenPlantDetailsActionHeader">
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+            <div class="fa fa-5x fa-border">
+                <span class="glyphicon glyphicon-grain"></span>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-offset-3 col-sm-3 col-md-offset-0">
+            <span class="">
                 <span class="">
                     {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='water'}}
                     {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='spray'}}
                     {{> gardenPlantRequiredAction plant=this.gardenPlant actionName='fertilize'}}
                 </span>
-                <span class="">
-                    <button class="btn btn-default btn-block {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"
+                <span class="{{#if isNotUserLoggedIn}}invisible{{/if}}">
+                    <button class="btn btn-default {{#if GardenPlant.amIWatching this.gardenPlant}}unwatchGardenPlant active{{else}}watchGardenPlant{{/if}}"
                             type="button">
                         <i class="fa fa-eye" style="color:black;"></i>
                         {{#if GardenPlant.amIWatching this.gardenPlant}}Unwatch{{else}}Watch{{/if}}
                         <span class="badge">{{_.size gardenPlant.watcher}}</span>
                     </button>
                 </span>
-                <span class="">
-                    {{> gardenPlantActions btnCssClass="btn-block"}}
+                <span class="{{#if isNotUserLoggedIn}}invisible{{/if}}">
+                    {{> gardenPlantActions}}
                 </span>
-            </div>
+            </span>
         </div>
-        <div class="row">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <h2>{{> xEditable type="text" value=gardenPlant.name success=onSuccessName placement="right" name='name' disabled=isNotUserLoggedIn}}</h2>
-                </li>
-                <li class="list-group-item">
-                    <i class="fa fa-leaf fa-fw"></i>
-                    {{> xEditable type="select" value=gardenPlant.plantId success=onSuccessPlantId name='plantId' disabled=isNotUserLoggedIn source=plantsList}}
-                    <a href='{{ pathFor route='plantDetails' _id=gardenPlant.plantId}}'><i
-                            class='fa fa-info'></i></a>
-                </li>
-                <li class="list-group-item">
-                    <i class="fa fa-map-marker fa-fw"></i>
-                    {{> xEditable type="typeaheadjs" value=gardenPlant.garden success=onSuccessGarden name='garden' disabled=isNotUserLoggedIn typeahead=typeaheadjs}}
-                </li>
-            </ul>
-        </div>
-    </header>
-</template>
-
-<template name="gardenPlantDetailsContent">
-        <div class="panel-group" id="gardenPlantDetails">
-            <section class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Upcoming events</h3>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        {{#if gt plant.waterInterval 0}}
-                            <li>Water in {{diffToday gardenPlant.actions.water.nextDate 'd'}} days</li>
-                        {{/if}}
-                        {{#if gt plant.sprayInterval 0}}
-                            <li>Spray in {{diffToday gardenPlant.actions.spray.nextDate 'd'}} days</li>
-                        {{/if}}
-                        {{#if gt plant.fertilizeInterval 0}}
-                            <li>Fertilize in {{diffToday gardenPlant.actions.fertilize.nextDate 'd'}} days</li>
-                        {{/if}}
-                    </ul>
-                </div>
-            </section>
-            <section class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{> gardenPlantActions}}</h3>
-                </div>
-
-                <div class="panel-body">
-                    {{> gardenPlantEvents}}
-                </div>
-            </section>
-        </div>
+    </div>
 </template>
