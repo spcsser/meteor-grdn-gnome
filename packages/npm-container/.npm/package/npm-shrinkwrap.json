@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "flower-power": {
+      "version": "0.3.0",
+      "dependencies": {
+        "noble-device": {
+          "version": "1.1.0",
+          "dependencies": {
+            "noble": {
+              "version": "1.1.0",
+              "dependencies": {
+                "debug": {
+                  "version": "2.2.0",
+                  "dependencies": {
+                    "ms": {
+                      "version": "0.7.1"
+                    }
+                  }
+                },
+                "bluetooth-hci-socket": {
+                  "version": "0.3.3",
+                  "dependencies": {
+                    "nan": {
+                      "version": "2.0.9"
+                    }
+                  }
+                },
+                "bplist-parser": {
+                  "version": "0.0.6"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
