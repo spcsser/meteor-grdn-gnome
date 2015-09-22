@@ -22,6 +22,7 @@ Navigation.init = function(){
     Navigation.addItem('home', 'Home');
     Navigation.addItem('plants', 'Plant-Wiki');
     Navigation.addItem('gardenPlants', 'Garden Plants');
+    Navigation.addItem('sensors', 'Sensors');
 };
 Navigation.getItems = function(){
     if(Navigation.items.length === 0) {

@@ -26,3 +26,7 @@ Meteor.publish('gardenPlantPlant', function(gardenPlantId){
     var gardenPlant = GardenPlants.findOne({_id: gardenPlantId});
     return Plants.find({_id: gardenPlant.plantId});
 });
+
+Meteor.publish('sensors', function(){
+    return Sensors.find();
+});

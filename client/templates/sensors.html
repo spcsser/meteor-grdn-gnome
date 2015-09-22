@@ -1,0 +1,16 @@
+<template name="sensors">
+    <section class="panel panel-default list-sensors">
+        <header class="panel-heading">
+            <h1 class="panel-title">Sensors</h1>
+        </header>
+        <table class="table">
+            <tbody>
+            {{#each sensors}}
+                <tr>
+                    <td>{{uuid}}</td><td>{{name}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </section>
+</template>
