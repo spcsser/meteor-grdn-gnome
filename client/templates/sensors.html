@@ -7,13 +7,29 @@
             <tbody>
             {{#each sensors}}
                 <tr>
-                    <td>Air temperature: {{data.airTemperature.value}}</td>
-                    <td>Soil temperature: {{data.soilTemperature.value}}</td>
-                    <td>Soil moisture: {{data.soilMoisture.value}}</td>
-                    <td>Soil conductivity: {{data.soilConductivity.value}}</td>
-                    <td>Sun light: {{data.sunlight.value}}</td>
-                    <td>{{uuid}}</td>
-                    <td>{{name}}</td>
+                    <td title="{{uuid}}">
+                        <i class="fa fa-tachometer"></i>
+                        {{name}}
+                    </td>
+                    <td title="Air temperature">
+                        <i class="fa fa-upload"></i>
+                        {{Sensor.formatTemperature data.airTemperature.value}}
+                    </td>
+                    <td title="Soil temperature">
+                        <i class="fa fa-download"></i>
+                        {{Sensor.formatTemperature data.soilTemperature.value}}
+                    </td>
+                    <td title="Soil moisture">
+                        <i class="fa fa-flask"></i>
+                        {{data.soilMoisture.value}}</td>
+                    <td title="Soil conductivity">
+                        <i class="fa fa-bolt"></i>
+                        {{data.soilConductivity.value}}
+                    </td>
+                    <td title="Sun light">
+                        <i class="fa fa-sun-o"></i>
+                        {{data.sunlight.value}}
+                    </td>
                 </tr>
             {{/each}}
             </tbody>

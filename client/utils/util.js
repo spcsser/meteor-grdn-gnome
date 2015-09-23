@@ -42,3 +42,7 @@ Template.registerHelper('_', function(){
 Template.registerHelper('GardenPlant', function(){
     return GardenPlant;
 });
+
+Template.registerHelper('Sensor', function(){
+   return Sensor;
+});

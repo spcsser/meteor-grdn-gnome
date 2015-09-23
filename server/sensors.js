@@ -18,7 +18,7 @@ FP.discoveredSensorCallback = Meteor.bindEnvironment(function (flowerPower) {
             data: {id: sensorItem.id, uuid: sensorItem.uuid},
             name: 'Sensor read for ' + sensorItem.uuid,
             schedule: function (parser) {
-                return parser.text('every hour');
+                return parser.text('every 1 hours');
             },
             job: function () {
                 FP.connectSensorByUuid(this.data.uuid);
