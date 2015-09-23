@@ -4,8 +4,10 @@ Meteor.methods({
         data.sensorId = sensorId;
         SensorDatasets.insert(data);
 
-        var updateData = {data: {}};
-        updateData[data.name] = {
+        var fieldName = 'data.' + data.name;
+
+        var updateData = {};
+        updateData[fieldName] = {
             name: data.name,
             createDate: data.createDate,
             value: data.value

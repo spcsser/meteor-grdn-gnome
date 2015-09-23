@@ -7,7 +7,13 @@
             <tbody>
             {{#each sensors}}
                 <tr>
-                    <td>{{uuid}}</td><td>{{name}}</td>
+                    <td>Air temperature: {{data.airTemperature.value}}</td>
+                    <td>Soil temperature: {{data.soilTemperature.value}}</td>
+                    <td>Soil moisture: {{data.soilMoisture.value}}</td>
+                    <td>Soil conductivity: {{data.soilConductivity.value}}</td>
+                    <td>Sun light: {{data.sunlight.value}}</td>
+                    <td>{{uuid}}</td>
+                    <td>{{name}}</td>
                 </tr>
             {{/each}}
             </tbody>

@@ -21,3 +21,4 @@ workman:x-editable-reactive-template
 percolate:synced-cron
 meteorhacks:npm
 npm-container
+peerlibrary:async
