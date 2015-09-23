@@ -13,7 +13,7 @@ FP.discoveredSensorCallback = Meteor.bindEnvironment(function(flowerPower){
             name: flowerPower.name,
             data: []
         };
-        Sensors.insert(sensorItem);
+        sensorItem = Sensors.insert(sensorItem);
         SyncedCron.add({
             data: {id: sensorItem.id, uuid: sensorItem.uuid},
             name: 'Sensor read for ' + sensorItem.uuid,
@@ -31,19 +31,19 @@ FP.discoveredSensorCallback = Meteor.bindEnvironment(function(flowerPower){
             return;
         }
         flowerPower.readAirTemperature(Meteor.bindEnvironment(function(err, data){
-            Meteor.call('updateSensorData', sensorItem._id, {name: 'airTemperature', type: 'temperature', data: data});
+            Meteor.call('updateSensorData', sensorItem._id, {name: 'airTemperature', type: 'temperature', value: data});
         }));
         flowerPower.readSoilTemperature(Meteor.bindEnvironment(function(err, data){
-            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilTemperature', type: 'temperature', data: data});
+            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilTemperature', type: 'temperature', value: data});
         }));
         flowerPower.readSoilMoisture(Meteor.bindEnvironment(function(err, data){
-            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilMoisture', type: 'humidity', data: data});
+            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilMoisture', type: 'humidity', value: data});
         }));
         flowerPower.readSunlight(Meteor.bindEnvironment(function(err, data){
-            Meteor.call('updateSensorData', sensorItem._id, {name: 'sunlight', type: 'light', data: data});
+            Meteor.call('updateSensorData', sensorItem._id, {name: 'sunlight', type: 'light', value: data});
         }));
         flowerPower.readSoilElectricalConductivity(Meteor.bindEnvironment(function(err, data){
-            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilConductivity', type: 'conductivity', data: data});
+            Meteor.call('updateSensorData', sensorItem._id, {name: 'soilConductivity', type: 'conductivity', value: data});
         }));
     }));
 });

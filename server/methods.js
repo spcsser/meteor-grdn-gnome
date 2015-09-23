@@ -1,7 +1,7 @@
 Meteor.methods({
     serverNotification: function () {
         var last = NotificationHistory.findOne({}, {sort: {addedAt: -1}});
-        var badge = 1
+        var badge = 1;
         if (last != null) {
             badge = last.badge + 1;
         }

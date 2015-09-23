@@ -30,3 +30,7 @@ Meteor.publish('gardenPlantPlant', function(gardenPlantId){
 Meteor.publish('sensors', function(){
     return Sensors.find();
 });
+
+Meteor.publish('currentSensorDatasetByType', function(sensorId, type){
+    return SensorDatasets.find({sensorId: sensorId, type: type}, {sort: {createDate: -1}, limit: 1});
+});
