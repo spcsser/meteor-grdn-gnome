@@ -11,6 +11,10 @@
                         <i class="fa fa-tachometer"></i>
                         {{name}}
                     </td>
+                    <td title="Update date">
+                        <i class="fa fa-"></i>
+                        {{Sensor.formatDateTime dataUpdate}}
+                    </td>
                     <td title="Air temperature">
                         <i class="fa fa-upload"></i>
                         {{Sensor.formatTemperature data.airTemperature.value}}

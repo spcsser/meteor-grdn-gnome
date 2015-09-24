@@ -6,7 +6,9 @@ Meteor.methods({
 
         var fieldName = 'data.' + data.name;
 
-        var updateData = {};
+        var updateData = {
+            dataUpdate : data.createDate
+        };
         updateData[fieldName] = {
             name: data.name,
             createDate: data.createDate,
