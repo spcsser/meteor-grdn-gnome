@@ -34,7 +34,7 @@
                                           href="#plantDescription"><h3 class="panel-title">Description</h3></a></div>
             <div id="plantDescription" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    <p class="editable-wrap">{{> xEditable type="textarea" value=plantDescription success=onSuccessPlantDescription name='plantDescription' disabled=isNotUserLoggedIn}}</p>
+                    <p class="editable-wrap">{{> xEditable type="textarea" value=plant.plantDescription success=onSuccessPlantDescription name='plantDescription' disabled=isNotUserLoggedIn}}</p>
                 </div>
             </div>
         </section>
@@ -43,7 +43,7 @@
                                           href="#lightConditions"><h3 class="panel-title">Lighting conditions</h3></a></div>
             <div id="lightConditions" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p class="editable-wrap">{{> xEditable type="textarea" value=lightConditions success=onSuccessLightConditions name='lightConditions' disabled=isNotUserLoggedIn}}</p>
+                    <p class="editable-wrap">{{> xEditable type="textarea" value=plant.lightConditions success=onSuccessLightConditions name='lightConditions' disabled=isNotUserLoggedIn}}</p>
                 </div>
             </div>
         </section>
@@ -56,7 +56,7 @@
                         Water every {{> xEditable type="number" value=waterInterval success=onSuccessWaterInterval name="waterInterval" disabled=isNotUserLoggedIn}} day{{#if gt waterInterval 1 }}s{{/if}}
                     </label>
 
-                    <p class="editable-wrap">{{> xEditable type="textarea" value=waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
+                    <p class="editable-wrap">{{> xEditable type="textarea" value=plant.waterConditions success=onSuccessWaterConditions name='waterConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
                 </div>
             </div>
         </section>
@@ -68,7 +68,7 @@
                     <label>
                         Fertilize every {{> xEditable type="number" value=fertilizeInterval success=onSuccessFertilizeInterval name="fertilizeInterval" unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}} day{{#if gt fertilizeInterval 1 }}s{{/if}}
                     </label>
-                    <p class="editable-wrap">{{> xEditable type="textarea" value=fertilizeConditions success=onSuccessFertilizeConditions name='fertilizeConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
+                    <p class="editable-wrap">{{> xEditable type="textarea" value=plant.fertilizeConditions success=onSuccessFertilizeConditions name='fertilizeConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
                 </div>
             </div>
         </section>
@@ -81,7 +81,7 @@
                         Spray every {{> xEditable type="number" value=sprayInterval success=onSuccessSprayInterval name="sprayInterval" unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}} day{{#if gt sprayInterval 1 }}s{{/if}}
                     </label>
 
-                    <p class="editable-wrap">{{> xEditable type="textarea" value=sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
+                    <p class="editable-wrap">{{> xEditable type="textarea" value=plant.sprayConditions success=onSuccessSprayConditions name='sprayConditions' unsavedclass=null mode='inline' disabled=isNotUserLoggedIn}}</p>
                 </div>
             </div>
         </section>

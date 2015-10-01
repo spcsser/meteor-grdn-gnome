@@ -6,13 +6,15 @@ onSuccessPlant= function(id, fieldName) {
     };
 };
 
-Template.plantDetails.helpers({
-    onSuccessName: function(){
+Template.plantDetailsHeader.helpers({
+    onSuccessName: function () {
         return onSuccessPlant(this._id, 'name');
     },
-    onSuccessScienceName: function(){
+    onSuccessScienceName: function () {
         return onSuccessPlant(this._id, 'scienceName');
-    },
+    }
+});
+Template.plantDetailsContent.helpers({
     onSuccessLightConditions: function(){
         return onSuccessPlant(this._id, 'lightConditions');
     },
